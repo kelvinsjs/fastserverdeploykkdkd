@@ -5,17 +5,20 @@ import random
 import json
 import requests
 from models import DailyCharacters, db
+import os
 
 
 characters_bp = Blueprint('characters', __name__)
 
-CHARACTERS_URL = "./character_data.json"
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+json_path = os.path.join(BASE_DIR, "character_data.json")
 
 def get_random_characters(count):
     try:
-        response = requests.get(CHARACTERS_URL)
-        response.raise_for_status()
-        data = response.json()
+        # Open and read the local JSON file
+        with open(json_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
 
         if not isinstance(data, list) or len(data) == 0:
             return []
@@ -115,9 +118,9 @@ def check_answers():
 @characters_bp.route('/api/all_characters', methods=['GET'])
 def get_all_characters():
     try:
-        response = requests.get(CHARACTERS_URL)
-        response.raise_for_status()
-        data = response.json()
+        # Open and read the local JSON file
+        with open(json_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
 
         if not isinstance(data, list):
             return jsonify({"error": "Неверный формат данных"}), 500
