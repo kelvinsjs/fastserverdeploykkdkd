@@ -123,7 +123,7 @@ def get_all_characters():
             return jsonify({"error": "Неверный формат данных"}), 500
 
         all_characters = data
-        all_affiliations = list(set(f"{char["affiliation"]}" for char in data))
+        all_affiliations = list(set(f"{char['affiliation']}" for char in data))
 
         return jsonify({
             "allChars": all_characters,
