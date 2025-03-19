@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VtubDLE</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <script src="sclip.js"></script>
+</head>
+
+<body>
+    <nav class="top-menu">
+        <div class="menu-container">
+            <a href="./index.html" class="menu_link"><img src="mainlogo.png" alt="Game Logo" class="menu-logo"></a>
+            <div class="menu-links">
+                <span>Play other modes: </span>
+                <a href="./artdle.html" class="menu-btn">Art</a>
+                <a href="./chardle.html" class="menu-btn">Char</a>
+                <a href="#" class="menu-btn">Tag</a>
+            </div>
+        </div>
+    </nav>
+    <main class="game-container">
+        <h1 class="chardle_title">Guess The Music Video By Frame</h1>
+        <p class="round-info" style="margin-bottom: 20px;">Difficulty: <span class="difficulty-tag">Easy</span></p>
+
+        <div class="bigimage-container">
+            <img id="clip-image"
+                src="https://shikimori.one/system/screenshots/original/02bfde3c6da0af1b8be4ac9d9bd775615a9d4e84.jpg"
+                alt="clip_frame">
+        </div>
+        <div class="clipdle_button-container">
+            <button id="first-clue" class="clipdle_button">Unlock First Clue</button>
+            <button id="second-clue" class="clipdle_button" disabled>Unlock Second Clue</button>
+            <button id="third-clue" class="clipdle_button" disabled>Unlock Third Clue</button>
+            <button id="title-clue" class="clipdle_button" disabled>Unlock Title Clue</button>
+        </div>
+        <h3 class="clipdle_title-clue">
+            Title: <span class="clipdle_title-title">______</span>
+        </h3>
+        <div class="clipdle_input-container">
+            <input type="text" class="clipdle_input-field" placeholder="Type your answer here">
+            <button class="guess-btn">Guess</button>
+        </div>
+
+    </main>
+    <div class="summary" style="display: none;">
+        <div class="final_summary_container">
+            <h1 class="chardle_title">Final result</h1>
+            <h2 class="final_summary_total">10000</h2>
+            <div class="final_summary_rounds">
+                <p class="final_summary_round"><span class="final_summary_round">Round 1</span><span
+                        class="final_summary_name">Name 1</span><span class="final_summary_score">1000</span></p>
+                <p class="final_summary_round"><span class="final_summary_round">Round 2</span><span
+                        class="final_summary_name">Name 2</span><span class="final_summary_score">400</span></p>
+                <p class="final_summary_round"><span class="final_summary_round">Round 3</span><span
+                        class="final_summary_name">Name 3</span><span class="final_summary_score">800</span></p>
+            </div>
+        </div>
+        <button class="final_summary_finalButton">
+            End Round
+        </button>
+    </div>
+</body>
+
+</html>
